@@ -1,0 +1,87 @@
+/*reset*/
+*{margin:0;  padding:0; box-sizing: border-box; outline: none;}
+
+/*variaveis*/
+:root{
+     --corAzul: #274083;
+}
+
+:root{
+
+}
+
+body{font-family: Arial; color: #fff; display: grid;
+     grid-template-columns: 75% 25%;
+    grid-template-areas: "cabecalho formulario"
+                        "principal formulario"
+                        "rodape formulario"; 
+    height: 100vh;                
+}
+/*header*/
+header{grid-area: cabecalho;}
+.logo h1{color: var(--corAzul); margin-left: 10px;}
+.logo img{width: 80px;}
+.logo{display:flex; align-items: center; padding: 10px 30px;}
+
+/*main*/
+main{grid-area: principal; background: linear-gradient(to right,
+      #48a0df,var(--corAzul)); display: flex; align-items: center;
+     padding-left:50px; padding-top: 5px; padding-top: 5px; 
+     line-height: 1c,;}
+
+main figure{width: 200px;}
+main figure img{width: 100%;}
+main h1{font-size: 40px; width: 70%; margin-bottom: 30px;}
+main h3{width: 80%;}
+
+/*aside*/
+aside{grid-area: formulario; background-color: var(--corAzul);}
+aside h1{text-align: center; margin-bottom: 20px; line-height: 1cm; margin-top: 20px;}
+aside form{width: 90%; margin: 0 auto;
+display: flex; flex-direction: column; gap: 20px;}
+aside input, aside select, aside button{padding: 15px; font-size: 16px; border: none;}
+
+::placeholder{color: black}
+
+aside:where(input, select):focus{outline: 2px solid #48a0df}
+
+aside input:focus, aside select:focus{outline: 0 0 10px solid #48a0df;}
+
+aside button{background-color: rgb(97, 216, 97); cursor: pointer; transition: all 0.2s linear;}
+
+aside button:hover{box-shadow: 0 0 10px #000;}
+
+aside small{margin-top:20px; margin-bottom: 20px; padding: 10px; display: block;text-align: justify;}
+
+
+/*footer*/
+footer{grid-area: rodape;background-color: #ccc; 
+     color:var(--corAzul); display: flex; padding: 30px;}
+footer section{margin: 5px 20px;}
+footer .rodape-titulo{margin-bottom: 20px;}
+footer .rodape-conteudo{text-align: justify; line-height: 0.7cm;}
+
+/*Responsividades tablet*/
+@media screen and (max-width:1200px) {
+     body{grid-template-columns: 100%;
+          grid-template-areas:'cabecalho'
+                              'principal'
+                              'rodape'
+                              'formulario';
+     }
+
+     main figure{margin-right:20px;}
+     main{height: 50vh;}
+}
+
+/*smartphone*/
+
+@media screen and (max-width:750px) {
+     main {background-color: #48a0df url(../imagens/livro2.png);
+     background-size: 200px;
+     background-position: center; background-blend-mode: ;}
+
+     main figure {display: none;}
+     main h1, main h2{width: 100%; text-shadow: 2px 1px 2px #000;}  
+     footer{flex-direction: column; row-gap: 20px;} 
+}
